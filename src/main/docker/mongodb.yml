@@ -1,0 +1,9 @@
+version: '2'
+services:
+    utils-mongodb:
+        image: mongo:4.0.2
+        ports:
+            - "27017:27017"
+        volumes:
+            - ~/volumes/jhipster/utils/mongodb/:/data/db/
+        restart: always

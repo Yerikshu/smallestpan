@@ -1,0 +1,27 @@
+entity UploadFile {
+    uploadTime String
+}
+
+entity DownloadFile {
+	name String
+    downloadTime String
+    count Instant
+}
+
+
+relationship OneToOne {
+	UploadFile{name} to DownloadFile
+}
+
+
+
+// Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with util
